@@ -1,12 +1,60 @@
+import Vue from "vue";
+import VueRouter from "vue-router";
+
+Vue.use(VueRouter);
+
+import App from "./views/App";
+import Home from "./views/Home";
+import Hello from "./views/Hello";
+
+const router = new VueRouter({
+    mode: "history",
+    routes: [
+        {
+            path: "/",
+            name: "home",
+            component: Home
+        },
+        {
+            path: "/hello",
+            name: "hello",
+            component: Hello
+        }
+    ]
+});
+
+const app = new Vue({
+    el: "#app",
+    components: { App },
+    router
+});
+
+// import ".bootstrap";
+// import Vue from "vue";
+
+// import Routes from "resources/js/routes.js";
+// import App from "resources/js/components/App";
+
+// const app = new Vue({
+//     el: "#app",
+//     router: Routes,
+//     render: h => h(App)
+// });
+
+// export default app;
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require("./bootstrap");
+// import ".bootstrap";
+// import Vue from "vue";
+// import VueRouter from "vue-router";
 
-window.Vue = require('vue');
+// Vue.use(VueRouter);
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,7 +67,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component("home", require("./components/Home.vue").default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,6 +75,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+// const app = new Vue({
+//     el: "#app",
+
+//     router: new VueRouter(routes)
+// });
